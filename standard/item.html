@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Item &mdash; openprocurement.tender.limited 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="openprocurement.tender.limited 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Стандарт даних" href="index.html"/>
+        <link rel="next" title="Document" href="document.html"/>
+        <link rel="prev" title="Contract" href="contract.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> openprocurement.tender.limited
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Огляд</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Туторіал</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Стандарт даних</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contract.html">Contract</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Item</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schema">Схема</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classification">Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Схема</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#unit">Unit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Схема</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tender.html">Tender</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">API Довідник</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">openprocurement.tender.limited</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Стандарт даних</a> &raquo;</li>
+      
+    <li>Item</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/standard/item.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="item">
+<span id="index-0"></span><span id="id1"></span><h1>Item<a class="headerlink" href="#item" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="schema">
+<h2>Схема<a class="headerlink" href="#schema" title="Постійне посилання на цей заголовок">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body"><p class="first">рядок, генерується автоматично</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">description:</th><td class="field-body"><p class="first">рядок, багатомовний, обов’язковий</p>
+<p>OpenContracting Description: Опис товарів та послуг, які повинні бути надані.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">classification:</th><td class="field-body"><p class="first"><a class="reference internal" href="#classification"><span>Classification</span></a></p>
+<p>OpenContracting Description: Початкова класифікація елемента. Дивіться у itemClassificationScheme, щоб визначити бажані списки класифікації, включно з CPV та GSIN.</p>
+<p>Класифікація <cite>classification.scheme</cite> обов’язково повинна бути <cite>CPV</cite>.  <cite>classification.id</cite> повинно бути дійсним CPV кодом.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">additionalClassifications:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">Список об’єктів <a class="reference internal" href="#classification"><span>Classification</span></a></p>
+<p>OpenContracting Description: Масив додаткових класифікацій для елемента. Дивіться у список кодів itemClassificationScheme, щоб використати поширені варіанти в OCDS. Також можна використовувати для представлення кодів з внутрішньої схеми класифікації.</p>
+<p>Обов’язково мати хоча б один елемент з <cite>ДКПП</cite> у стрічці <cite>scheme</cite>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">unit:</th><td class="field-body"><p class="first"><a class="reference internal" href="#unit"><span>Unit</span></a></p>
+<p>OpenContracting Description: Опис одиниці виміру товару, наприклад, години, кілограми. Складається з назви одиниці та значення однієї одиниці.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">quantity:</th><td class="field-body"><p class="first">ціле число</p>
+<p>OpenContracting Description: Кількість необхідних одиниць.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">deliveryDate:</th><td class="field-body"><p class="first"><a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/util.html#period" title="(in openprocurement.api v2.0b2)"><span>Period</span></a></p>
+<p>Період, протягом якого елемент повинен бути доставлений.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">deliveryAddress:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/organization.html#address" title="(in openprocurement.api v2.0b2)"><span>Address</span></a></p>
+<p>Адреса місця, куди елемент повинен бути доставлений.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">deliveryLocation:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">словник</p>
+<p>Географічні координати місця доставки. Складається з таких компонентів:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body"><p class="first last">рядок, обов’язковий</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">longitude:</th><td class="field-body"><p class="first last">рядок, обов’язковий</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">elevation:</th><td class="field-body"><p class="first last">стрічка, не обов’язково, переважно не використовується</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><cite>deliveryLocation</cite> зазвичай має вищий пріоритет ніж <cite>deliveryAddress</cite>, якщо вони обидва вказані.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">relatedLot:</th><td class="field-body"><p class="first">рядок</p>
+<p class="last">ID пов’язаного <a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/lot.html#lot" title="(in openprocurement.api v2.0b2)"><span>Lot</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="classification">
+<span id="id2"></span><h1>Classification<a class="headerlink" href="#classification" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="id3">
+<h2>Схема<a class="headerlink" href="#id3" title="Постійне посилання на цей заголовок">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">scheme:</th><td class="field-body"><p class="first">рядок</p>
+<p>OpenContracting Description: Класифікація повинна бути взята з існуючої схеми або списку кодів. Це поле використовується, щоб вказати схему/список кодів, з яких буде братись класифікація. Для класифікацій лінійних елементів це значення повинно представляти відому Схему Класифікації Елементів, де це можливо.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">id:</th><td class="field-body"><p class="first">рядок</p>
+<p>OpenContracting Description: Код класифікації взятий з вибраної схеми.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body"><p class="first">рядок</p>
+<p>OpenContracting Description: Текстовий опис або назва коду.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">uri:</th><td class="field-body"><p class="first">uri</p>
+<p class="last">OpenContracting Description: URI для ідентифікації коду. Якщо індивідуальні URI не доступні для елементів у схемі ідентифікації це значення треба залишити пустим.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="unit">
+<span id="id4"></span><h1>Unit<a class="headerlink" href="#unit" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="id5">
+<h2>Схема<a class="headerlink" href="#id5" title="Постійне посилання на цей заголовок">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">code:</th><td class="field-body"><p class="first">рядок, обов’язковий</p>
+<p>Код одиниці в UN/CEFACT Recommendation 20.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">name:</th><td class="field-body"><p class="first">рядок</p>
+<p class="last">OpenContracting Description: Назва одиниці</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="document.html" class="btn btn-neutral float-right" title="Document" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contract.html" class="btn btn-neutral" title="Contract" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016, Quintagroup, Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

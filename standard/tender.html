@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tender &mdash; openprocurement.tender.limited 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="openprocurement.tender.limited 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Стандарт даних" href="index.html"/>
+        <link rel="next" title="API Довідник" href="../reference.html"/>
+        <link rel="prev" title="Document" href="document.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> openprocurement.tender.limited
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Огляд</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Туторіал</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Стандарт даних</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contract.html">Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="item.html">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="item.html#classification">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="item.html#unit">Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">Document</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Tender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schema">Схема</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tender-workflow">Схема роботи Tender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">API Довідник</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">openprocurement.tender.limited</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Стандарт даних</a> &raquo;</li>
+      
+    <li>Tender</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/standard/tender.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tender">
+<span id="index-0"></span><span id="id1"></span><h1>Tender<a class="headerlink" href="#tender" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="schema">
+<h2>Схема<a class="headerlink" href="#schema" title="Постійне посилання на цей заголовок">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">title:</th><td class="field-body"><p class="first">рядок, багатомовний</p>
+<p>Назва тендера, яка відображається у списках. Можна включити такі елементи:</p>
+<ul class="simple">
+<li><p class="first">код закупівлі (у системі управління організації-замовника)</p>
+</li>
+<li><p class="first">періодичність закупівлі (щороку, щокварталу, і т.д.)</p>
+</li>
+<li><p class="first">елемент, що закуповується</p>
+</li>
+<li><p class="first">інша інформація</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">description:</th><td class="field-body"><p class="first">рядок, багатомовний</p>
+<p>Детальний опис закупівлі</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tenderID:</th><td class="field-body"><p class="first">рядок, генерується автоматично, лише для читання</p>
+<p>Ідентифікатор закупівлі, щоб знайти закупівлю у  &#8220;паперовій&#8221; документації</p>
+<p>OpenContracting Description: TenderID повинен завжди співпадати з OCID. Його включають, щоб зробити структуру даних більш зручною.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">procuringEntity:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/organization.html#organization" title="(in openprocurement.api v2.0b2)"><span>Organization</span></a>, обов’язково</p>
+<p>Організація, що проводить закупівлю.</p>
+<p>OpenContracting Description: Об’єкт, що управляє закупівлею. Він не обов’язково є покупцем, який платить / використовує закуплені елементи.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">value:</th><td class="field-body"><p class="first"><a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/util.html#value" title="(in openprocurement.api v2.0b2)"><span>Value</span></a>, обов’язково</p>
+<p>Повний доступний бюджет закупівлі.</p>
+<p>OpenContracting Description: Загальна кошторисна вартість закупівлі.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">items:</th><td class="field-body"><p class="first">список об’єктів <a class="reference internal" href="item.html#item"><span>Item</span></a>, обов’язково</p>
+<p>Список об’єктів <a class="reference internal" href="document.html#document"><span>Document</span></a></p>
+<p>OpenContracting Description: Товари та послуги, що будуть закуплені, поділені на спискові елементи, де це можливо. Елементи не повинні дублюватись, замість цього вкажіть кількість 2.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">documents:</th><td class="field-body"><p class="first">Список об’єктів <a class="reference internal" href="document.html#document"><span>Document</span></a></p>
+<p>OpenContracting Description: Всі документи та додатки пов’язані із закупівлею.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">awards:</th><td class="field-body"><p class="first">Список об’єктів <a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/award.html#award" title="(in openprocurement.api v2.0b2)"><span>Award</span></a></p>
+<p>Усі  кваліфікації (дискваліфікації та переможці).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">contracts:</th><td class="field-body"><blockquote class="first">
+<div><p>Список об’єктів <a class="reference internal" href="contract.html#contract"><span>Contract</span></a></p>
+</div></blockquote>
+<p>OpenContracting Description: Дата або період, коли очікується визначення переможця.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">status:</th><td class="field-body"><p class="first">рядок</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><cite>active</cite>:</th><td class="field-body"><p class="first last">Активна закупівля (за замовчуванням)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name"><cite>complete</cite>:</th><td class="field-body"><p class="first last">Завершена закупівля</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name"><cite>cancelled</cite>:</th><td class="field-body"><p class="first last">Відмінена закупівля</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name"><cite>unsuccessful</cite>:</th><td class="field-body"><p class="first last">Закупівля не відбулась</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Статус Закупівлі.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">cancellations:</th><td class="field-body"><p class="first">Список об’єктів <a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/cancellation.html#cancellation" title="(in openprocurement.api v2.0b2)"><span>Cancellation</span></a>.</p>
+<p>Містить 1 об’єкт зі статусом <cite>active</cite> на випадок, якщо Закупівлю буде відмінено.</p>
+<p>Об’єкт <a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/cancellation.html#cancellation" title="(in openprocurement.api v2.0b2)"><span>Cancellation</span></a> описує причину скасування закупівлі та надає відповідні документи, якщо такі є.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">procurementMethod:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">рядок, генерується автоматично</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><cite>limited</cite>:</th><td class="field-body"><p class="first last">За замовчуванням.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Метод закупівлі.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">procurementMethodRationale:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">рядок, багатомовний</p>
+<p>Обгрунтування використання такого методу закупівлі.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">procurementMethodType:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">рядок</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><cite>reporting</cite>:</th><td class="field-body"><p class="first last">ідентифікатор процедури <strong>реєстрації угоди</strong></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name"><cite>negotiation</cite>:</th><td class="field-body"><p class="first last">ідентифікатор <strong>переговорної</strong> процедури</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2"><cite>negotiation.quick</cite>:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last">ідентифікатор <strong>скороченої переговорної</strong> процедури</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">dateModified:</th><td class="field-body"><p class="first">рядок, <a class="reference external" href="http://openprocurementapi.readthedocs.org/en/latest/standard/util.html#date" title="(in openprocurement.api v2.0b2)"><span>Date</span></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">owner:</th><td class="field-body"><p class="first last">рядок, генерується автоматично</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tender-workflow">
+<h2>Схема роботи Tender<a class="headerlink" href="#tender-workflow" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p class="graphviz">
+digraph G {
+    A [ label=&quot;active*&quot; ]
+    B [ label=&quot;complete&quot;]
+    C [ label=&quot;cancelled&quot;]
+     A -&gt; B;
+     A -&gt; C;
+}</p>
+<p>* позначає початковий стан</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference.html" class="btn btn-neutral float-right" title="API Довідник" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="document.html" class="btn btn-neutral" title="Document" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016, Quintagroup, Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

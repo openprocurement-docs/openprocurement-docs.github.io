@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Туторіал &mdash; openprocurement.tender.limited 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="openprocurement.tender.limited 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Стандарт даних" href="standard/index.html"/>
+        <link rel="prev" title="Огляд" href="overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> openprocurement.tender.limited
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Огляд</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Туторіал</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plan-creation">Створення плану</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-plan-procurement">Створення плану закупівлі</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-plan">Модифікація плану закупівлі</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="standard/index.html">Стандарт даних</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">API Довідник</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">openprocurement.tender.limited</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Туторіал</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial">
+<span id="id1"></span><h1>Туторіал<a class="headerlink" href="#tutorial" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="plan-creation">
+<h2>Створення плану<a class="headerlink" href="#plan-creation" title="Постійне посилання на цей заголовок">¶</a></h2>
+<div class="section" id="creating-plan-procurement">
+<h3>Створення плану закупівлі<a class="headerlink" href="#creating-plan-procurement" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Створимо план</p>
+<div class="code highlight-python"><div class="highlight"><pre>POST /api/0.12/plans?opt_pretty=1 HTTP/1.0
+Authorization: Basic YnJva2VyOg==
+Content-Length: 2309
+Content-Type: application/json
+Host: api-sandbox.openprocurement.org
+
+{
+    &quot;data&quot;: {
+        &quot;tender&quot;: {
+            &quot;procurementMethod&quot;: &quot;open&quot;,
+            &quot;procurementMethodType&quot; : &quot;belowThreshold&quot;,
+            &quot;tenderPeriod&quot;: {
+                &quot;startDate&quot;: &quot;2015-05-09T23:11:39.720908+03:00&quot;
+            }
+        },
+        &quot;items&quot;: [
+            {
+                &quot;deliveryDate&quot;: {
+                    &quot;endDate&quot;: &quot;2015-05-11T23:11:39.721063+03:00&quot;
+                },
+                &quot;additionalClassifications&quot;: [
+                    {
+                        &quot;scheme&quot;: &quot;ДКПП&quot;,
+                        &quot;id&quot;: &quot;01.11.92&quot;,
+                        &quot;description&quot;: &quot;Насіння гірчиці&quot;
+                    }
+                ],
+                &quot;unit&quot;: {
+                    &quot;code&quot;: &quot;KGM&quot;,
+                    &quot;name&quot;: &quot;кг&quot;
+                },
+                &quot;classification&quot;: {
+                    &quot;scheme&quot;: &quot;CPV&quot;,
+                    &quot;description&quot;: &quot;Mustard seeds&quot;,
+                    &quot;id&quot;: &quot;03111600-8&quot;
+                },
+                &quot;quantity&quot;: 1000,
+                &quot;description&quot;: &quot;Насіння гірчиці&quot;
+            },
+            {
+                &quot;deliveryDate&quot;: {
+                    &quot;endDate&quot;: &quot;2015-07-18T11:14:36.721063+03:00&quot;
+                },
+                &quot;additionalClassifications&quot;: [
+                    {
+                        &quot;scheme&quot;: &quot;ДКПП&quot;,
+                        &quot;id&quot;: &quot;01.11.95&quot;,
+                        &quot;description&quot;: &quot;Насіння соняшнику&quot;
+                    }
+                ],
+                &quot;unit&quot;: {
+                    &quot;code&quot;: &quot;KGM&quot;,
+                    &quot;name&quot;: &quot;кг&quot;
+                },
+                &quot;classification&quot;: {
+                    &quot;scheme&quot;: &quot;CPV&quot;,
+                    &quot;description&quot;: &quot;Mustard seeds&quot;,
+                    &quot;id&quot;: &quot;03111600-8&quot;
+                },
+                &quot;quantity&quot;: 2000,
+                &quot;description&quot;: &quot;Насіння соняшнику&quot;
+            },
+            {
+                &quot;deliveryDate&quot;: {
+                    &quot;endDate&quot;: &quot;2015-08-23T14:00:00.721063+03:00&quot;
+                },
+                &quot;additionalClassifications&quot;: [
+                    {
+                        &quot;scheme&quot;: &quot;ДКПП&quot;,
+                        &quot;id&quot;: &quot;01.11.84&quot;,
+                        &quot;description&quot;: &quot;Насіння бавовнику&quot;
+                    }
+                ],
+                &quot;unit&quot;: {
+                    &quot;code&quot;: &quot;KGM&quot;,
+                    &quot;name&quot;: &quot;кг&quot;
+                },
+                &quot;classification&quot;: {
+                    &quot;scheme&quot;: &quot;CPV&quot;,
+                    &quot;description&quot;: &quot;Cotton seeds&quot;,
+                    &quot;id&quot;: &quot;03111400-6&quot;
+                },
+                &quot;quantity&quot;: 3000,
+                &quot;description&quot;: &quot;Насіння бавовнику&quot;
+            }
+        ],
+        &quot;classification&quot;: {
+            &quot;scheme&quot;: &quot;CPV&quot;,
+            &quot;description&quot;: &quot;Seeds&quot;,
+            &quot;id&quot;: &quot;03111000-2&quot;
+        },
+        &quot;additionalClassifications&quot;: [
+            {
+                &quot;scheme&quot;: &quot;ДКПП&quot;,
+                &quot;id&quot;: &quot;01.11.95&quot;,
+                &quot;description&quot;: &quot;Насіння соняшнику&quot;
+            },
+            {
+                &quot;scheme&quot;: &quot;КЕКВ&quot;,
+                &quot;id&quot;: &quot;1&quot;,
+                &quot;description&quot;: &quot;-&quot;
+            }
+        ],
+        &quot;procuringEntity&quot;: {
+            &quot;identifier&quot;: {
+                &quot;scheme&quot;: &quot;UA-EDR&quot;,
+                &quot;id&quot;: &quot;111983&quot;,
+                &quot;legalName&quot;: &quot;ДП Державне Управління Справами&quot;
+            },
+            &quot;name&quot;: &quot;ДУС&quot;
+        },
+        &quot;budget&quot;: {
+            &quot;project&quot;: {
+                &quot;name&quot;: &quot;proj_name&quot;,
+                &quot;id&quot;: &quot;123&quot;
+            },
+            &quot;amount&quot;: 10000,
+            &quot;amountNet&quot;: 12222,
+            &quot;currency&quot;: &quot;UAH&quot;,
+            &quot;id&quot;: &quot;12303111000-2&quot;,
+            &quot;description&quot;: &quot;budget_description&quot;
+        }
+    }
+}
+
+Response: 201 Created
+Content-Type: application/json; charset=UTF-8
+Location: https://lb.api-sandbox.openprocurement.org/api/0.12/plans/aead442df18e4cee886b7d5318449b88
+{
+  &quot;access&quot;: {
+    &quot;token&quot;: &quot;575bd6d52ccb467db2a0947326832edc&quot;
+  },
+  &quot;data&quot;: {
+    &quot;classification&quot;: {
+      &quot;scheme&quot;: &quot;CPV&quot;,
+      &quot;description&quot;: &quot;Seeds&quot;,
+      &quot;id&quot;: &quot;03111000-2&quot;
+    },
+    &quot;items&quot;: [
+      {
+        &quot;description&quot;: &quot;Насіння гірчиці&quot;,
+        &quot;classification&quot;: {
+          &quot;scheme&quot;: &quot;CPV&quot;,
+          &quot;description&quot;: &quot;Mustard seeds&quot;,
+          &quot;id&quot;: &quot;03111600-8&quot;
+        },
+        &quot;additionalClassifications&quot;: [
+          {
+            &quot;scheme&quot;: &quot;ДКПП&quot;,
+            &quot;id&quot;: &quot;01.11.92&quot;,
+            &quot;description&quot;: &quot;Насіння гірчиці&quot;
+          }
+        ],
+        &quot;deliveryDate&quot;: {
+          &quot;endDate&quot;: &quot;2015-05-11T23:11:39.721063+03:00&quot;
+        },
+        &quot;id&quot;: &quot;6730474a1fc84df384fd7a79f1f7ded9&quot;,
+        &quot;unit&quot;: {
+          &quot;code&quot;: &quot;KGM&quot;,
+          &quot;name&quot;: &quot;кг&quot;
+        },
+        &quot;quantity&quot;: 1000
+      },
+      {
+        &quot;description&quot;: &quot;Насіння соняшнику&quot;,
+        &quot;classification&quot;: {
+          &quot;scheme&quot;: &quot;CPV&quot;,
+          &quot;description&quot;: &quot;Mustard seeds&quot;,
+          &quot;id&quot;: &quot;03111600-8&quot;
+        },
+        &quot;additionalClassifications&quot;: [
+          {
+            &quot;scheme&quot;: &quot;ДКПП&quot;,
+            &quot;id&quot;: &quot;01.11.95&quot;,
+            &quot;description&quot;: &quot;Насіння соняшнику&quot;
+          }
+        ],
+        &quot;deliveryDate&quot;: {
+          &quot;endDate&quot;: &quot;2015-07-18T11:14:36.721063+03:00&quot;
+        },
+        &quot;id&quot;: &quot;0ca3833182e24255a2d2786e2d9d7f1f&quot;,
+        &quot;unit&quot;: {
+          &quot;code&quot;: &quot;KGM&quot;,
+          &quot;name&quot;: &quot;кг&quot;
+        },
+        &quot;quantity&quot;: 2000
+      },
+      {
+        &quot;description&quot;: &quot;Насіння бавовнику&quot;,
+        &quot;classification&quot;: {
+          &quot;scheme&quot;: &quot;CPV&quot;,
+          &quot;description&quot;: &quot;Cotton seeds&quot;,
+          &quot;id&quot;: &quot;03111400-6&quot;
+        },
+        &quot;additionalClassifications&quot;: [
+          {
+            &quot;scheme&quot;: &quot;ДКПП&quot;,
+            &quot;id&quot;: &quot;01.11.84&quot;,
+            &quot;description&quot;: &quot;Насіння бавовнику&quot;
+          }
+        ],
+        &quot;deliveryDate&quot;: {
+          &quot;endDate&quot;: &quot;2015-08-23T14:00:00.721063+03:00&quot;
+        },
+        &quot;id&quot;: &quot;9e4134304b66417b80f69852207e02c8&quot;,
+        &quot;unit&quot;: {
+          &quot;code&quot;: &quot;KGM&quot;,
+          &quot;name&quot;: &quot;кг&quot;
+        },
+        &quot;quantity&quot;: 3000
+      }
+    ],
+    &quot;planID&quot;: &quot;UA-P-2016-03-13-000001-1&quot;,
+    &quot;budget&quot;: {
+      &quot;amountNet&quot;: 12222,
+      &quot;description&quot;: &quot;budget_description&quot;,
+      &quot;project&quot;: {
+        &quot;id&quot;: &quot;123&quot;,
+        &quot;name&quot;: &quot;proj_name&quot;
+      },
+      &quot;currency&quot;: &quot;UAH&quot;,
+      &quot;amount&quot;: 10000,
+      &quot;id&quot;: &quot;12303111000-2&quot;
+    },
+    &quot;id&quot;: &quot;aead442df18e4cee886b7d5318449b88&quot;,
+    &quot;additionalClassifications&quot;: [
+      {
+        &quot;scheme&quot;: &quot;ДКПП&quot;,
+        &quot;id&quot;: &quot;01.11.95&quot;,
+        &quot;description&quot;: &quot;Насіння соняшнику&quot;
+      },
+      {
+        &quot;scheme&quot;: &quot;КЕКВ&quot;,
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;description&quot;: &quot;-&quot;
+      }
+    ],
+    &quot;procuringEntity&quot;: {
+      &quot;identifier&quot;: {
+        &quot;scheme&quot;: &quot;UA-EDR&quot;,
+        &quot;id&quot;: &quot;111983&quot;,
+        &quot;legalName&quot;: &quot;ДП Державне Управління Справами&quot;
+      },
+      &quot;name&quot;: &quot;ДУС&quot;
+    },
+    &quot;tender&quot;: {
+      &quot;procurementMethod&quot;: &quot;open&quot;,
+      &quot;procurementMethodType&quot;: &quot;belowThreshold&quot;,
+      &quot;tenderPeriod&quot;: {
+        &quot;startDate&quot;: &quot;2015-05-09T23:11:39.720908+03:00&quot;
+      }
+    },
+    &quot;dateModified&quot;: &quot;2016-03-13T21:29:25.748431+02:00&quot;
+  }
+}
+</pre></div>
+</div>
+<p>Ми отримали код відповіді <cite>201 Created</cite>, заголовок <cite>Location</cite> і тіло з додатковим ідентифікатором <cite>id</cite>, <cite>planID</cite> та властивість <cite>dateModified</cite> - дату, що показує час, коли план закупівлі востаннє модифікувався.</p>
+<p>Перевіримо, що містить реєстр планів закупівель:</p>
+<p>Відображається  <cite>id</cite> - внутрішній ідентифікатор (який можна використовувати, щоб побудувати повну URL-адресу, додаючи <cite>http://api-sandbox.openprocurement.org/api/0/plans/</cite> на початку) та мітка часу <cite>dateModified</cite>.</p>
+</div>
+<div class="section" id="modifying-plan">
+<h3>Модифікація плану закупівлі<a class="headerlink" href="#modifying-plan" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Оновимо план шляхом надання їй усіх інших важливих властивостей:</p>
+<div class="code highlight-python"><div class="highlight"><pre>PATCH /api/0.12/plans/aead442df18e4cee886b7d5318449b88?acc_token=bfe0379f14c74dde85987bd075df7bcb HTTP/1.0
+Authorization: Basic YnJva2VyOg==
+Content-Length: 80
+Content-Type: application/json
+Host: api-sandbox.openprocurement.org
+
+{
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;unit&quot;: {
+          &quot;code&quot;: &quot;KGM&quot;,
+          &quot;name&quot;: &quot;кг&quot;
+        },
+        &quot;quantity&quot;: 2000
+      }
+    ]
+  }
+}
+
+Response: 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  &quot;data&quot;: {
+    &quot;classification&quot;: {
+      &quot;scheme&quot;: &quot;CPV&quot;,
+      &quot;description&quot;: &quot;Seeds&quot;,
+      &quot;id&quot;: &quot;03111000-2&quot;
+    },
+    &quot;items&quot;: [
+      {
+        &quot;description&quot;: &quot;Насіння гірчиці&quot;,
+        &quot;classification&quot;: {
+          &quot;scheme&quot;: &quot;CPV&quot;,
+          &quot;description&quot;: &quot;Mustard seeds&quot;,
+          &quot;id&quot;: &quot;03111600-8&quot;
+        },
+        &quot;additionalClassifications&quot;: [
+          {
+            &quot;scheme&quot;: &quot;ДКПП&quot;,
+            &quot;id&quot;: &quot;01.11.92&quot;,
+            &quot;description&quot;: &quot;Насіння гірчиці&quot;
+          }
+        ],
+        &quot;deliveryDate&quot;: {
+          &quot;endDate&quot;: &quot;2015-05-11T23:11:39.721063+03:00&quot;
+        },
+        &quot;id&quot;: &quot;6730474a1fc84df384fd7a79f1f7ded9&quot;,
+        &quot;unit&quot;: {
+          &quot;code&quot;: &quot;KGM&quot;,
+          &quot;name&quot;: &quot;кг&quot;
+        },
+        &quot;quantity&quot;: 2000
+      }
+    ],
+    &quot;planID&quot;: &quot;UA-P-2016-03-13-000001-1&quot;,
+    &quot;budget&quot;: {
+      &quot;amountNet&quot;: 12222,
+      &quot;description&quot;: &quot;budget_description&quot;,
+      &quot;project&quot;: {
+        &quot;id&quot;: &quot;123&quot;,
+        &quot;name&quot;: &quot;proj_name&quot;
+      },
+      &quot;currency&quot;: &quot;UAH&quot;,
+      &quot;amount&quot;: 10000,
+      &quot;id&quot;: &quot;12303111000-2&quot;
+    },
+    &quot;id&quot;: &quot;aead442df18e4cee886b7d5318449b88&quot;,
+    &quot;additionalClassifications&quot;: [
+      {
+        &quot;scheme&quot;: &quot;ДКПП&quot;,
+        &quot;id&quot;: &quot;01.11.95&quot;,
+        &quot;description&quot;: &quot;Насіння соняшнику&quot;
+      },
+      {
+        &quot;scheme&quot;: &quot;КЕКВ&quot;,
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;description&quot;: &quot;-&quot;
+      }
+    ],
+    &quot;procuringEntity&quot;: {
+      &quot;identifier&quot;: {
+        &quot;scheme&quot;: &quot;UA-EDR&quot;,
+        &quot;id&quot;: &quot;111983&quot;,
+        &quot;legalName&quot;: &quot;ДП Державне Управління Справами&quot;
+      },
+      &quot;name&quot;: &quot;ДУС&quot;
+    },
+    &quot;tender&quot;: {
+      &quot;procurementMethod&quot;: &quot;open&quot;,
+      &quot;procurementMethodType&quot;: &quot;belowThreshold&quot;,
+      &quot;tenderPeriod&quot;: {
+        &quot;startDate&quot;: &quot;2015-05-09T23:11:39.720908+03:00&quot;
+      }
+    },
+    &quot;dateModified&quot;: &quot;2016-03-13T21:35:05.517460+02:00&quot;
+  }
+}
+</pre></div>
+</div>
+<p>Ми бачимо, що додаткові властивості об’єднані з існуючими даними плану. Додатково оновлена властивість dateModified, щоб відображати останню дату модифікації.</p>
+<p>Ще одна перевірка списку відображає нову дату модифікації:</p>
+<div class="code highlight-python"><div class="highlight"><pre>GET /api/0.12/plans?opt_pretty=1 HTTP/1.0
+Host: api-sandbox.openprocurement.org
+
+Response: 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  &quot;next_page&quot;: {
+    &quot;path&quot;: &quot;/api/0.12/plans?descending=1&amp;offset=2016-01-29T11%3A13%3A35.293387%2B02%3A00&quot;,
+    &quot;uri&quot;: &quot;https://lb.api-sandbox.openprocurement.org/api/0.12/plans?descending=1&amp;offset=2016-01-29T11%3A13%3A35.293387%2B02%3A00&quot;,
+    &quot;offset&quot;: &quot;2016-01-29T11:13:35.293387+02:00&quot;
+  },
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;aead442df18e4cee886b7d5318449b88&quot;,
+      &quot;dateModified&quot;: &quot;2016-03-13T21:35:05.517460+02:00&quot;
+    }
+  ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="standard/index.html" class="btn btn-neutral float-right" title="Стандарт даних" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral" title="Огляд" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016, Quintagroup, Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
